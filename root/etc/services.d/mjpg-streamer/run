@@ -1,11 +1,5 @@
 #!/usr/bin/with-contenv sh
 
-if [ -n "$MJPEG_STREAMER_INPUT" ]; then
-  echo "Deprecation warning: the environment variable '\$MJPEG_STREAMER_INPUT' was renamed to '\$MJPG_STREAMER_INPUT'"
-
-  MJPG_STREAMER_INPUT=$MJPEG_STREAMER_INPUT
-fi
-
 if ! expr "$MJPG_STREAMER_INPUT" : ".*\.so.*" > /dev/null; then
   MJPG_STREAMER_INPUT="input_uvc.so $MJPG_STREAMER_INPUT"
 fi
